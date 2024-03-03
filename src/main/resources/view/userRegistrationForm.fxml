@@ -5,20 +5,23 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserRegistrationFormController">
    <children>
       <AnchorPane prefHeight="400.0" prefWidth="600.0">
          <children>
             <Label layoutX="255.0" layoutY="14.0" text="User Registration" />
-            <TextField fx:id="txtName" layoutX="206.0" layoutY="93.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your name" />
-            <TextField fx:id="txtPassword" layoutX="206.0" layoutY="201.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your password" />
-            <TextField fx:id="txtEmail" layoutX="206.0" layoutY="146.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your e-mail address" />
-            <Label layoutX="206.0" layoutY="76.0" text="Name" />
-            <Label layoutX="210.0" layoutY="184.0" text="Password" />
-            <Label layoutX="210.0" layoutY="129.0" text="E-mail" />
+            <TextField fx:id="txtName" layoutX="118.0" layoutY="143.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your name" />
+            <TextField fx:id="txtPassword" layoutX="358.0" layoutY="143.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your password" />
+            <TextField fx:id="txtEmail" layoutX="358.0" layoutY="85.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your e-mail address" />
+            <Label layoutX="118.0" layoutY="126.0" text="Name" />
+            <Label layoutX="362.0" layoutY="126.0" text="Password" />
+            <Label layoutX="362.0" layoutY="68.0" text="E-mail" />
             <Button layoutX="255.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
             <Button layoutX="325.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
+            <TextField fx:id="txtId" layoutX="118.0" layoutY="86.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your id" />
+            <Label layoutX="120.0" layoutY="68.0" text="Id" />
+            <TextField fx:id="txtAddress" layoutX="118.0" layoutY="199.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your address" />
+            <Label layoutX="118.0" layoutY="182.0" text="Address" />
          </children>
       </AnchorPane>
    </children>
