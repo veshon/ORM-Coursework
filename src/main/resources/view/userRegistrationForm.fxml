@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserRegistrationFormController">
+   <children>
+      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Label layoutX="255.0" layoutY="14.0" text="User Registration" />
+            <TextField fx:id="txtName" layoutX="206.0" layoutY="93.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your name" />
+            <TextField fx:id="txtPassword" layoutX="206.0" layoutY="201.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your password" />
+            <TextField fx:id="txtEmail" layoutX="206.0" layoutY="146.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your e-mail address" />
+            <Label layoutX="206.0" layoutY="76.0" text="Name" />
+            <Label layoutX="210.0" layoutY="184.0" text="Password" />
+            <Label layoutX="210.0" layoutY="129.0" text="E-mail" />
+            <Button layoutX="255.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
+            <Button layoutX="325.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
