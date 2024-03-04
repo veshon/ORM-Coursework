@@ -16,15 +16,15 @@
             <TextField fx:id="txtAvailability" layoutX="350.0" layoutY="119.0" promptText="Enter availability status" />
             <TextField fx:id="txtAuthor" layoutX="124.0" layoutY="174.0" promptText="Enter author " />
             <TextField fx:id="txtGenre" layoutX="350.0" layoutY="59.0" promptText="Enter genre" />
-            <Button layoutX="183.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
-            <Button layoutX="323.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
-            <Button layoutX="245.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
-            <Button layoutX="386.0" layoutY="225.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
+            <Button layoutX="182.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
+            <Button layoutX="322.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
+            <Button layoutX="244.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
+            <Button layoutX="385.0" layoutY="217.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Delete" />
             <Label layoutX="124.0" layoutY="95.0" text="Title" />
             <Label layoutX="351.0" layoutY="36.0" text="Genre" />
             <Label layoutX="351.0" layoutY="96.0" text="Availability " />
             <Label layoutX="129.0" layoutY="152.0" text="Author" />
-            <TableView fx:id="tble" layoutY="288.0" prefHeight="112.0" prefWidth="600.0">
+            <TableView fx:id="tble" layoutY="258.0" prefHeight="142.0" prefWidth="600.0">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="78.0" text="ID" />
                 <TableColumn fx:id="colTitle" prefWidth="103.0" text="Title" />
@@ -38,6 +38,7 @@
             <Label layoutX="127.0" layoutY="39.0" text="Id" />
             <TextField fx:id="txtUserId" layoutX="350.0" layoutY="174.0" promptText="Enter availability status" />
             <Label layoutX="352.0" layoutY="152.0" text="User ID" />
+            <Button layoutX="8.0" layoutY="11.0" mnemonicParsing="false" text="Home" />
          </children>
       </AnchorPane>
    </children>

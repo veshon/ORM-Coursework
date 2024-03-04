@@ -118,7 +118,7 @@ public class BooksManageFormController {
 
         boolean isValidated = validateCustomer();
         if (isValidated) {
-            new Alert(Alert.AlertType.INFORMATION, "Customer validated");
+            new Alert(Alert.AlertType.INFORMATION, "Book validated");
             var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
 
             try {
@@ -129,7 +129,7 @@ public class BooksManageFormController {
                     obList.clear();
                     loadAllCustomer();
 
-                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                    new Alert(Alert.AlertType.CONFIRMATION, "Book saved!").show();
                     clearFields();
                 }
             } catch (SQLException e) {
@@ -151,7 +151,7 @@ public class BooksManageFormController {
         boolean nameValidated = Pattern.matches("[A-Za-z ]+", name);
 
         if (!nameValidated) {
-            new Alert(Alert.AlertType.ERROR, "Invalid Title").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid Title !!").show();
             return false;
         }
 
@@ -159,7 +159,7 @@ public class BooksManageFormController {
         boolean addressValidated = Pattern.matches("[A-Za-z]{3,}", address);
 
         if (!addressValidated){
-            new Alert(Alert.AlertType.ERROR,"Invalid address").show();
+            new Alert(Alert.AlertType.ERROR,"Invalid author !!").show();
             return false;
         }
 
@@ -167,20 +167,20 @@ public class BooksManageFormController {
         boolean telValidated = Pattern.matches("[A-Za-z]{3,}", tel);
 
         if (!telValidated) {
-            new Alert(Alert.AlertType.ERROR, "Invalid Tel No").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid Genre !!").show();
             return false;
         }
         String avl = txtAvailability.getText();
         boolean avlValidated = Pattern.matches("[A-Za-z]{3,}", avl);
 
         if (!avlValidated) {
-            new Alert(Alert.AlertType.ERROR, "Invalid Status").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid Status !!").show();
             return false;
         }
         String uid = txtUserId.getText();
         boolean uidValidated = Pattern.matches("[U0-9]{4,}", uid);
         if (!uidValidated) {
-            new Alert(Alert.AlertType.ERROR, "Invalid User ID ").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid User ID !!").show();
             return false;
         }
 
