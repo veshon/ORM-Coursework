@@ -31,6 +31,22 @@ public class UserRegistrationFormController {
     @FXML
     private TextField txtPassword;
 
+    private UserDAOImpl userImpl = new UserDAOImpl();
+
+    public void initialize(){
+        generateNextUserId();
+    }
+
+    private void generateNextUserId() {
+        try {
+            String userId = userImpl.generateNexUserId();
+            txtId.setText(userId);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
         txtId.setText("");
