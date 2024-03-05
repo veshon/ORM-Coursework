@@ -77,7 +77,7 @@ public class BooksManageFormController {
         var model = new BookDAOImpl();
 
         try {
-            List<BooksManagementDTO> dtoList = model.getAllBook();
+            List<BooksManagementDTO> dtoList = model.getAll();
 
             for (BooksManagementDTO dto : dtoList) {
                 obList.add(
@@ -93,7 +93,7 @@ public class BooksManageFormController {
             }
 
             tble.setItems(obList);
-        } catch (SQLException e) {
+        } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
@@ -109,7 +109,7 @@ public class BooksManageFormController {
         boolean isValidated = validateDeleteBook();
         if (isValidated) {
             try {
-                boolean isDeleted = bookDAOImpl.deleteBook(id);
+                boolean isDeleted = bookDAOImpl.delete(id);
                 if (isDeleted) {
                     obList.clear();
                     loadAllCustomer();
@@ -119,7 +119,7 @@ public class BooksManageFormController {
                     new Alert(Alert.AlertType.INFORMATION, "Book is not deleted !!").show();
                 }
                 clearFields();
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
         }
@@ -150,7 +150,7 @@ public class BooksManageFormController {
             var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
 
             try {
-                boolean isSaved = bookDAOImpl.saveBook(dto);
+                boolean isSaved = bookDAOImpl.save(dto);
 
                 if (isSaved) {
 
@@ -238,7 +238,7 @@ public class BooksManageFormController {
             var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
 
             try {
-                boolean isUpdated = bookDAOImpl.updateBook(dto);
+                boolean isUpdated = bookDAOImpl.update(dto);
                 if(isUpdated) {
                     obList.clear();
                     loadAllCustomer();
@@ -246,7 +246,7 @@ public class BooksManageFormController {
                     new Alert(Alert.AlertType.CONFIRMATION, "Book updated!").show();
                     clearFields();
                 }
-            } catch (SQLException | ClassNotFoundException e) {
+            } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
         }
