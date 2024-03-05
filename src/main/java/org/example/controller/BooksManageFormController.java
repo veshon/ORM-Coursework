@@ -184,7 +184,7 @@ public class BooksManageFormController {
         boolean idValidate = Pattern.matches("[B0-9]{4,}", id);
 
         if (!idValidate) {
-            new Alert(Alert.AlertType.ERROR, "Invalid id. Please try again!!").show();
+            new Alert(Alert.AlertType.ERROR, "Invalid Book Id. Please try again!!").show();
             return false;
         }
 
