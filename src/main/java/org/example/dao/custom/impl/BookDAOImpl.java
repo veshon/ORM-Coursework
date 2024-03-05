@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BookDAOImpl {
+public class BookDAOImpl  {
 
     public boolean saveBook(BooksManagementDTO dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
@@ -52,5 +52,23 @@ public class BookDAOImpl {
             );
         }
         return dtoList;
+    }
+    public boolean deleteBook(String id) throws SQLException, ClassNotFoundException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("DELETE FROM book WHERE id=?");
+        pstm.setString(1,id);
+        return pstm.executeUpdate()>0;
+    }
+    public boolean updateBook(BooksManagementDTO dto) throws SQLException, ClassNotFoundException {
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("UPDATE book SET title=?, author=?, genre=?, availability_status=?, user_id=? WHERE id=?");
+        pstm.setString(1,dto.getTitle());
+        pstm.setString(2, dto.getAuthor());
+        pstm.setString(3, dto.getGenre());
+        pstm.setString(4, dto.getAvailability_status());
+        pstm.setString(5, dto.getUser_id());
+        pstm.setString(6, dto.getId());
+        return pstm.executeUpdate()> 0;
+
     }
 }

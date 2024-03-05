@@ -104,7 +104,35 @@ public class BooksManageFormController {
 
     @FXML
     void btnDeleteOnAction(ActionEvent event) {
+        String id = txtId.getText();
 
+        boolean isValidated = validateDeleteBook();
+        if (isValidated) {
+            try {
+                boolean isDeleted = bookDAOImpl.deleteBook(id);
+                if (isDeleted) {
+                    obList.clear();
+                    loadAllCustomer();
+
+                    new Alert(Alert.AlertType.CONFIRMATION, "Book deleted").show();
+                } else {
+                    new Alert(Alert.AlertType.INFORMATION, "Book is not deleted !!").show();
+                }
+                clearFields();
+            } catch (SQLException | ClassNotFoundException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        }
+    }
+
+    private boolean validateDeleteBook() {
+        String id = txtId.getText();
+        boolean deleteCustomer = Pattern.matches("[B0-9]{4,}", id);
+        if (!deleteCustomer){
+            new Alert(Alert.AlertType.ERROR,"Invalid Book Id. Please Try again").show();
+            return false;
+        }
+        return true;
     }
 
     @FXML
@@ -192,10 +220,46 @@ public class BooksManageFormController {
         txtAvailability.setText("");
         txtGenre.setText("");
         txtTitle.setText("");
+        txtUserId.setText("");
     }
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        String id = txtId.getText();
+        String title = txtTitle.getText();
+        String author = txtAuthor.getText();
+        String genre = txtGenre.getText();
+        String availability = txtAvailability.getText();
+        String user_id = txtUserId.getText();
 
+        boolean isValidated = validateUpdateBook();
+        if (isValidated){
+            new Alert(Alert.AlertType.INFORMATION,"Validated");
+
+            var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
+
+            try {
+                boolean isUpdated = bookDAOImpl.updateBook(dto);
+                if(isUpdated) {
+                    obList.clear();
+                    loadAllCustomer();
+
+                    new Alert(Alert.AlertType.CONFIRMATION, "Book updated!").show();
+                    clearFields();
+                }
+            } catch (SQLException | ClassNotFoundException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        }
     }
+    private boolean validateUpdateBook() {
+        String id = txtId.getText();
+        boolean isValidate = Pattern.matches("[B0-9]{4,}", id);
+        if (!isValidate) {
+            new Alert(Alert.AlertType.ERROR,"Invalid Book ID. Please try again!!").show();
+            return false;
+        }
+        return true;
+    }
+
 
 }
