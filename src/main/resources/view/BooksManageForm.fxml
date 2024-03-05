@@ -34,11 +34,11 @@
                   <TableColumn fx:id="colUserId" prefWidth="86.0" text="User ID" />
               </columns>
             </TableView>
-            <TextField fx:id="txtId" layoutX="124.0" layoutY="60.0" promptText="Enter title" />
-            <Label layoutX="127.0" layoutY="39.0" text="Id" />
+            <TextField fx:id="txtId" layoutX="124.0" layoutY="60.0" onAction="#txtSearchOnAction" promptText="Enter title" />
+            <Label layoutX="127.0" layoutY="39.0" text="Book ID" />
             <TextField fx:id="txtUserId" layoutX="350.0" layoutY="174.0" promptText="Enter availability status" />
             <Label layoutX="352.0" layoutY="152.0" text="User ID" />
-            <Button layoutX="8.0" layoutY="11.0" mnemonicParsing="false" text="Home" />
+            <Button layoutX="6.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnHomeOnAction" text="Home" />
          </children>
       </AnchorPane>
    </children>

@@ -4,21 +4,31 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
+import org.example.dao.custom.BookDAO;
 import org.example.dao.custom.impl.BookDAOImpl;
 import org.example.dao.custom.impl.UserDAOImpl;
 import org.example.dto.BooksManagementDTO;
 import org.example.tm.BooksTM;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Pattern;
 
 public class BooksManageFormController {
+    private static Stage stage;
+    private static Scene scene;
+    private static Parent parent;
 
     @FXML
     private TableColumn<?, ?> colAuthor;
@@ -63,6 +73,7 @@ public class BooksManageFormController {
     public void initialize() {
         loadAllCustomer();
         setCellValueFactory();
+        generateNextBookId();
     }
 
     private void setCellValueFactory() {
@@ -75,6 +86,8 @@ public class BooksManageFormController {
     }
     private void loadAllCustomer() {
         var model = new BookDAOImpl();
+        BookDAO bookDAO = new BookDAOImpl();
+        tble.getItems().clear();
 
         try {
             List<BooksManagementDTO> dtoList = model.getAll();
@@ -261,5 +274,41 @@ public class BooksManageFormController {
         return true;
     }
 
+    @FXML
+    void txtSearchOnAction(ActionEvent event) {
+        String id = txtId.getText();
 
+        try {
+            BooksManagementDTO booksManagementDTO = bookDAOImpl.search(id);
+            if (booksManagementDTO != null) {
+                txtId.setText(booksManagementDTO.getId());
+                txtTitle.setText(booksManagementDTO.getTitle());
+                txtAuthor.setText(booksManagementDTO.getAuthor());
+                txtGenre.setText(booksManagementDTO.getGenre());
+                txtAvailability.setText(booksManagementDTO.getAvailability_status());
+                txtUserId.setText(booksManagementDTO.getUser_id());
+            } else {
+                new Alert(Alert.AlertType.INFORMATION, "Book not found !!").show();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+    private void generateNextBookId() {
+        try {
+            String userId = bookDAOImpl.generateNexBookId();
+            txtId.setText(userId);
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
 }

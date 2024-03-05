@@ -2,12 +2,18 @@ package org.example.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import org.example.dao.custom.UserDAO;
 import org.example.dao.custom.impl.UserDAOImpl;
 import org.example.dto.UserRegistrationDTO;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -30,6 +36,10 @@ public class UserRegistrationFormController {
 
     @FXML
     private TextField txtPassword;
+
+    private static Stage stage;
+    private static Scene scene;
+    private static Parent parent;
 
     private UserDAOImpl userImpl = new UserDAOImpl();
 
@@ -123,4 +133,12 @@ public class UserRegistrationFormController {
         return true;
     }
 
+    public void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
 }

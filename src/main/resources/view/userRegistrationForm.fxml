@@ -19,9 +19,10 @@
             <Button layoutX="255.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
             <Button layoutX="325.0" layoutY="275.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
             <TextField fx:id="txtId" layoutX="118.0" layoutY="86.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your id" />
-            <Label layoutX="120.0" layoutY="68.0" text="Id" />
+            <Label layoutX="120.0" layoutY="68.0" text="User ID" />
             <TextField fx:id="txtAddress" layoutX="118.0" layoutY="199.0" prefHeight="25.0" prefWidth="189.0" promptText="Enter your address" />
             <Label layoutX="118.0" layoutY="182.0" text="Address" />
+            <Button layoutX="5.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnHomeOnAction" text="Home" />
          </children>
       </AnchorPane>
    </children>
