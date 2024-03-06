@@ -1,5 +1,6 @@
 package org.example.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
@@ -15,7 +16,7 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy ="user")
+    @OneToMany(mappedBy ="user", cascade = CascadeType.ALL)
 
     private List<Book>books;
 

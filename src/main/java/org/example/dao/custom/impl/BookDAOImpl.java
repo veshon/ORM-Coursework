@@ -112,12 +112,12 @@ public class BookDAOImpl implements BookDAO {
 
         ResultSet resultSet = pstm.executeQuery();
         if (resultSet.next()) {
-            return splitUserId(resultSet.getString(1));
+            return splitBookId(resultSet.getString(1));
         }
-        return splitUserId(null);
+        return splitBookId(null);
     }
 
-    private String splitUserId(String currentUserId) {
+    private String splitBookId(String currentUserId) {
         if (currentUserId != null) {
             String[] split = currentUserId.split("B0");
 

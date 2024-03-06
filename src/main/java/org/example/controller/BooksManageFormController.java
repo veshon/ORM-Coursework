@@ -157,7 +157,7 @@ public class BooksManageFormController {
         String availability = txtAvailability.getText();
         String user_id = txtUserId.getText();
 
-        boolean isValidated = validateCustomer();
+        boolean isValidated = validateBook();
         if (isValidated) {
             new Alert(Alert.AlertType.INFORMATION, "Book validated");
             var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
@@ -178,7 +178,7 @@ public class BooksManageFormController {
             }
         }
     }
-    private boolean validateCustomer() {
+    private boolean validateBook() {
 
         String id = txtId.getText();
         boolean idValidate = Pattern.matches("[B0-9]{4,}", id);

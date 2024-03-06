@@ -35,7 +35,10 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public boolean delete(String id) throws SQLException {
-        return false;
+        Connection connection = DbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement("DELETE FROM user WHERE id=?");
+        pstm.setString(1,id);
+        return pstm.executeUpdate()>0;
     }
 
     @Override
