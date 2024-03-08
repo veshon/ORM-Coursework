@@ -2,13 +2,26 @@ package org.example.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.example.dao.custom.UserDAO;
 import org.example.dao.custom.impl.UserDAOImpl;
+import org.example.db.DbConnection;
 import org.example.dto.BooksManagementDTO;
 import org.example.dto.UserRegistrationDTO;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.util.regex.Pattern;
 
@@ -27,7 +40,9 @@ public class UserManageFormController {
 
     @FXML
     private TextField txtPassword;
-
+    private static Stage stage;
+    private static Scene scene;
+    private static Parent parent;
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clearFields();
@@ -68,8 +83,13 @@ public class UserManageFormController {
     }
 
     @FXML
-    void btnSaveOnAction(ActionEvent event) {
-
+    void btnBackOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
     }
 
     @FXML
@@ -94,13 +114,61 @@ public class UserManageFormController {
 
     @FXML
     void btnUpdateOnAction(ActionEvent event) {
+        String id = txtId.getText();
+        String name = txtName.getText();
+        String address = txtAddress.getText();
+        String email = txtEmail.getText();
+        String password = txtPassword.getText();
 
+        boolean isValidated = validateUpdateUser();
+        if (isValidated) {
+            new Alert(Alert.AlertType.INFORMATION,"Validated");
+            try {
+
+
+                userDAO.update(new UserRegistrationDTO(id, name, address, email, password));
+
+
+
+                if (isValidated) {
+
+                    new Alert(Alert.AlertType.CONFIRMATION, "User updated!").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }
+        }
     }
+
+    private boolean validateUpdateUser() {
+        String id = txtId.getText();
+        boolean isValidate = Pattern.matches("[U0-9]{4,}", id);
+        if (!isValidate) {
+            new Alert(Alert.AlertType.ERROR,"Invalid User ID. Please try again!!").show();
+            return false;
+        }
+        return true;
+    }
+
     private void clearFields() {
         txtId.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtEmail.setText("");
         txtPassword.setText("");
+    }
+
+    @FXML
+    void btnReportOnAction(ActionEvent event) throws JRException, SQLException {
+        InputStream inputStream = getClass().getResourceAsStream("/reports/UserReport.jrxml");
+        JasperDesign load = JRXmlLoader.load(inputStream);
+
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
+        JasperViewer.viewReport(jasperPrint, false);
     }
 }

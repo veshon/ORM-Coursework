@@ -28,10 +28,10 @@ public class Main {
         user.setEmail("veshonmabima17@gmail.com");
         user.setPassword("1234");
 
-        // session.save(user);
-       // session.save(book);
+         session.save(user);
+         session.save(book);
 
-        book.setUser(user);
+         book.setUser(user);
 
         transaction.commit();
         session.close();
