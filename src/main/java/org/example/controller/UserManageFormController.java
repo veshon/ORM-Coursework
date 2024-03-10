@@ -68,8 +68,8 @@ public class UserManageFormController {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
         }
-
     }
+
     private boolean validateDeleteUser() {
 
         String id = txtId.getText();

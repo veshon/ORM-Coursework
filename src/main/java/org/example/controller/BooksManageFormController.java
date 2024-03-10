@@ -46,6 +46,9 @@ public class BooksManageFormController {
     private TableColumn<?, ?> colId;
 
     @FXML
+    private TableColumn<?, ?> colPrice;
+
+    @FXML
     private TableView<BooksTM> tble;
 
     @FXML
@@ -56,6 +59,9 @@ public class BooksManageFormController {
 
     @FXML
     private TextField txtGenre;
+
+    @FXML
+    private TextField txtPrice;
 
     @FXML
     private TextField txtTitle;
@@ -81,6 +87,7 @@ public class BooksManageFormController {
         colTitle.setCellValueFactory(new PropertyValueFactory<>("title"));
         colAuthor.setCellValueFactory(new PropertyValueFactory<>("author"));
         colGenre.setCellValueFactory(new PropertyValueFactory<>("genre"));
+        colPrice.setCellValueFactory(new PropertyValueFactory<>("price"));
         colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
         colUserId.setCellValueFactory(new PropertyValueFactory<>("user_id"));
     }

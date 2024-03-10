@@ -6,40 +6,88 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BooksManageFormController">
    <children>
-      <AnchorPane prefHeight="400.0" prefWidth="600.0">
+      <AnchorPane prefHeight="650.0" prefWidth="1100.0">
          <children>
-            <Label layoutX="248.0" layoutY="6.0" text="Books Managemrnt" />
-            <TextField fx:id="txtTitle" layoutX="124.0" layoutY="118.0" promptText="Enter title" />
-            <TextField fx:id="txtAvailability" layoutX="350.0" layoutY="119.0" promptText="Enter availability status" />
-            <TextField fx:id="txtAuthor" layoutX="124.0" layoutY="174.0" promptText="Enter author " />
-            <TextField fx:id="txtGenre" layoutX="350.0" layoutY="59.0" promptText="Enter genre" />
-            <Button layoutX="147.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnSaveOnAction" text="Save" />
-            <Button layoutX="287.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnClearOnAction" text="Clear" />
-            <Button layoutX="209.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" text="Update" />
-            <Button layoutX="350.0" layoutY="214.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" text="Remove" />
-            <Label layoutX="124.0" layoutY="95.0" text="Title" />
-            <Label layoutX="351.0" layoutY="36.0" text="Genre" />
-            <Label layoutX="351.0" layoutY="96.0" text="Availability " />
-            <Label layoutX="129.0" layoutY="152.0" text="Author" />
-            <TableView fx:id="tble" layoutY="258.0" prefHeight="142.0" prefWidth="600.0">
+            <Label layoutX="363.0" layoutY="2.0" text="Books Managemrnt">
+               <font>
+                  <Font name="System Bold" size="40.0" />
+               </font></Label>
+            <TextField fx:id="txtTitle" layoutX="217.0" layoutY="208.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
+            <TextField fx:id="txtAvailability" layoutX="507.0" layoutY="222.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
+            <TextField fx:id="txtAuthor" layoutX="215.0" layoutY="291.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter author " style="-fx-background-radius: 30;" />
+            <TextField fx:id="txtGenre" layoutX="698.0" layoutY="123.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
+            <Button layoutX="301.0" layoutY="364.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" text="Save">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="533.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" text="Clear">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="411.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" text="Update">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="647.0" layoutY="366.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" text="Remove">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Label layoutX="713.0" layoutY="100.0" text="Genre">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="523.0" layoutY="200.0" text="Availability ">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Label layoutX="234.0" layoutY="267.0" text="Author">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <TableView fx:id="tble" layoutX="-20.0" layoutY="439.0" prefHeight="211.0" prefWidth="1119.0">
               <columns>
-                <TableColumn fx:id="colId" prefWidth="78.0" text="ID" />
-                <TableColumn fx:id="colTitle" prefWidth="103.0" text="Title" />
-                  <TableColumn fx:id="colAuthor" prefWidth="101.0" text="Author" />
-                  <TableColumn fx:id="colGenre" prefWidth="120.0" text="Genre" />
-                  <TableColumn fx:id="colAvailability" prefWidth="109.0" text="Availability" />
-                  <TableColumn fx:id="colUserId" prefWidth="86.0" text="User ID" />
+                <TableColumn fx:id="colId" prefWidth="119.0" text="ID" />
+                <TableColumn fx:id="colTitle" prefWidth="132.0" text="Title" />
+                  <TableColumn fx:id="colAuthor" prefWidth="128.33331298828125" text="Author" />
+                  <TableColumn fx:id="colGenre" prefWidth="227.0" text="Genre" />
+                  <TableColumn fx:id="colAvailability" prefWidth="146.0" text="Availability" />
+                  <TableColumn fx:id="colUserId" prefWidth="171.33331298828125" text="User ID" />
+                  <TableColumn fx:id="colPrice" prefWidth="227.0" text="Price" />
               </columns>
             </TableView>
-            <TextField fx:id="txtId" layoutX="124.0" layoutY="60.0" promptText="Enter title" />
-            <Label layoutX="127.0" layoutY="39.0" text="Book ID" />
-            <TextField fx:id="txtUserId" layoutX="350.0" layoutY="174.0" promptText="Enter availability status" />
-            <Label layoutX="352.0" layoutY="152.0" text="User ID" />
-            <Button layoutX="6.0" layoutY="11.0" mnemonicParsing="false" onAction="#btnHomeOnAction" text="Home" />
-            <Button layoutX="427.0" layoutY="214.0" mnemonicParsing="false" onAction="#txtSearchOnAction" text="Search" />
+            <TextField fx:id="txtId" layoutX="214.0" layoutY="128.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
+            <Label layoutX="229.0" layoutY="105.0" text="Book ID">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <TextField fx:id="txtUserId" layoutX="508.0" layoutY="307.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter User ID" style="-fx-background-radius: 30;" />
+            <Label layoutX="523.0" layoutY="286.0" text="User ID">
+               <font>
+                  <Font size="15.0" />
+               </font></Label>
+            <Button layoutX="5.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="45.0" prefWidth="83.0" text="Home">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Button layoutX="759.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Search">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+            <Label layoutX="233.0" layoutY="187.0" text="Title">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrice" layoutX="819.0" layoutY="187.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter Price" style="-fx-background-radius: 30;" />
+            <Label layoutX="848.0" layoutY="163.0" text="Price">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

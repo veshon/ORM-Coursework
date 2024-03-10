@@ -12,6 +12,7 @@ public class Book {
     private String title;
     private String author;
     private String genre;
+    private String price;
     private String availability_status;
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
@@ -20,12 +21,14 @@ public class Book {
     public Book() {
     }
 
-    public Book(String id, String title, String author, String genre, String availability_status, User user) {
+    public Book(String id, String title, String author, String genre, String price, String availability_status, User user) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.price = price;
         this.availability_status = availability_status;
+        this.user = user;
     }
 
     public Book(User user) {
@@ -70,6 +73,14 @@ public class Book {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
     }
 
     public String getAvailability_status() {
