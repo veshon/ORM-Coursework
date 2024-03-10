@@ -17,30 +17,30 @@
                   <Font name="System Bold" size="40.0" />
                </font></Label>
             <TextField fx:id="txtTitle" layoutX="217.0" layoutY="208.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
-            <TextField fx:id="txtAvailability" layoutX="507.0" layoutY="222.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
+            <TextField fx:id="txtAvailability" layoutX="592.0" layoutY="203.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
             <TextField fx:id="txtAuthor" layoutX="215.0" layoutY="291.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter author " style="-fx-background-radius: 30;" />
-            <TextField fx:id="txtGenre" layoutX="698.0" layoutY="123.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
-            <Button layoutX="301.0" layoutY="364.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" text="Save">
+            <TextField fx:id="txtGenre" layoutX="215.0" layoutY="373.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
+            <Button layoutX="523.0" layoutY="369.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" text="Save">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="533.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" text="Clear">
+            <Button layoutX="755.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" text="Clear">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="411.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" text="Update">
+            <Button layoutX="633.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" text="Update">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="647.0" layoutY="366.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" text="Remove">
+            <Button layoutX="869.0" layoutY="371.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" text="Remove">
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Label layoutX="713.0" layoutY="100.0" text="Genre">
+            <Label layoutX="231.0" layoutY="350.0" text="Genre">
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <Label layoutX="523.0" layoutY="200.0" text="Availability ">
+            <Label layoutX="608.0" layoutY="181.0" text="Availability ">
                <font>
                   <Font size="15.0" />
                </font></Label>
@@ -48,15 +48,15 @@
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <TableView fx:id="tble" layoutX="-20.0" layoutY="439.0" prefHeight="211.0" prefWidth="1119.0">
+            <TableView fx:id="tble" layoutY="438.0" prefHeight="211.0" prefWidth="1099.0">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="119.0" text="ID" />
-                <TableColumn fx:id="colTitle" prefWidth="132.0" text="Title" />
-                  <TableColumn fx:id="colAuthor" prefWidth="128.33331298828125" text="Author" />
-                  <TableColumn fx:id="colGenre" prefWidth="227.0" text="Genre" />
-                  <TableColumn fx:id="colAvailability" prefWidth="146.0" text="Availability" />
-                  <TableColumn fx:id="colUserId" prefWidth="171.33331298828125" text="User ID" />
-                  <TableColumn fx:id="colPrice" prefWidth="227.0" text="Price" />
+                <TableColumn fx:id="colTitle" prefWidth="172.00001525878906" text="Title" />
+                  <TableColumn fx:id="colAuthor" prefWidth="173.0" text="Author" />
+                  <TableColumn fx:id="colGenre" prefWidth="197.66668701171875" text="Genre" />
+                  <TableColumn fx:id="colAvailability" prefWidth="88.0" text="Availability" />
+                  <TableColumn fx:id="colUserId" prefWidth="168.0" text="User ID" />
+                  <TableColumn fx:id="colPrice" prefWidth="179.0" text="Price" />
               </columns>
             </TableView>
             <TextField fx:id="txtId" layoutX="214.0" layoutY="128.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
@@ -64,8 +64,8 @@
                <font>
                   <Font size="15.0" />
                </font></Label>
-            <TextField fx:id="txtUserId" layoutX="508.0" layoutY="307.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter User ID" style="-fx-background-radius: 30;" />
-            <Label layoutX="523.0" layoutY="286.0" text="User ID">
+            <TextField fx:id="txtUserId" layoutX="592.0" layoutY="288.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter User ID" style="-fx-background-radius: 30;" />
+            <Label layoutX="607.0" layoutY="267.0" text="User ID">
                <font>
                   <Font size="15.0" />
                </font></Label>
@@ -73,7 +73,7 @@
                <font>
                   <Font size="15.0" />
                </font></Button>
-            <Button layoutX="759.0" layoutY="367.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Search">
+            <Button layoutX="981.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Search">
                <font>
                   <Font size="15.0" />
                </font></Button>
@@ -82,8 +82,8 @@
                   <Font size="15.0" />
                </font>
             </Label>
-            <TextField fx:id="txtPrice" layoutX="819.0" layoutY="187.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter Price" style="-fx-background-radius: 30;" />
-            <Label layoutX="848.0" layoutY="163.0" text="Price">
+            <TextField fx:id="txtPrice" layoutX="589.0" layoutY="120.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter Price" style="-fx-background-radius: 30;" />
+            <Label layoutX="618.0" layoutY="96.0" text="Price">
                <font>
                   <Font size="15.0" />
                </font>

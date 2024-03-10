@@ -31,8 +31,9 @@ public class BookDAOImpl implements BookDAO {
                             resultSet.getString(2),
                             resultSet.getString(3),
                             resultSet.getString(4),
-                            resultSet.getString(5),
-                            resultSet.getString(6)
+                            resultSet.getDouble(5),
+                            resultSet.getString(6),
+                            resultSet.getString(7)
                     )
             );
         }
@@ -43,15 +44,16 @@ public class BookDAOImpl implements BookDAO {
     public boolean save(BooksManagementDTO dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
 
-        String sql = "INSERT INTO book VALUES(?, ?, ?, ?,?,?)";
+        String sql = "INSERT INTO book VALUES(?, ?, ?, ?,?,?,?)";
         PreparedStatement pstm = connection.prepareStatement(sql);
 
         pstm.setString(1, dto.getId());
         pstm.setString(2, dto.getTitle());
         pstm.setString(3, dto.getAuthor());
         pstm.setString(4, dto.getGenre());
-        pstm.setString(5, dto.getAvailability_status());
-        pstm.setString(6, dto.getUser_id());
+        pstm.setDouble(5, dto.getPrice());
+        pstm.setString(6, dto.getAvailability_status());
+        pstm.setString(7, dto.getUser_id());
 
         boolean isSaved = pstm.executeUpdate() > 0;
 
@@ -69,13 +71,14 @@ public class BookDAOImpl implements BookDAO {
     @Override
     public boolean update(BooksManagementDTO dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("UPDATE book SET title=?, author=?, genre=?, availability_status=?, user_id=? WHERE id=?");
+        PreparedStatement pstm = connection.prepareStatement("UPDATE book SET title=?, author=?, genre=?, price=?, availability_status=?, user_id=? WHERE id=?");
         pstm.setString(1,dto.getTitle());
         pstm.setString(2, dto.getAuthor());
         pstm.setString(3, dto.getGenre());
-        pstm.setString(4, dto.getAvailability_status());
-        pstm.setString(5, dto.getUser_id());
-        pstm.setString(6, dto.getId());
+        pstm.setDouble(4, dto.getPrice());
+        pstm.setString(5, dto.getAvailability_status());
+        pstm.setString(6, dto.getUser_id());
+        pstm.setString(7, dto.getId());
         return pstm.executeUpdate()> 0;
 
     }
@@ -97,10 +100,11 @@ public class BookDAOImpl implements BookDAO {
             String title = resultSet.getString(2);
             String author = resultSet.getString(3);
             String genre = resultSet.getString(4);
-            String availability = resultSet.getString(5);
-            String userId = resultSet.getString(6);
+            double price = resultSet.getDouble(5);
+            String availability = resultSet.getString(6);
+            String userId = resultSet.getString(7);
 
-            dto = new BooksManagementDTO(BId, title, author, genre, availability, userId);
+            dto = new BooksManagementDTO(BId, title, author, genre, price, availability, userId);
         }
         return dto;
     }

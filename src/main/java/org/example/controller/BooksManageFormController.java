@@ -106,6 +106,7 @@ public class BooksManageFormController {
                                 dto.getTitle(),
                                 dto.getAuthor(),
                                 dto.getGenre(),
+                                dto.getPrice(),
                                 dto.getAvailability_status(),
                                 dto.getUser_id()
                         )
@@ -161,13 +162,14 @@ public class BooksManageFormController {
         String title = txtTitle.getText();
         String author = txtAuthor.getText();
         String genre = txtGenre.getText();
+        double price = Double.parseDouble(txtPrice.getText());
         String availability = txtAvailability.getText();
         String user_id = txtUserId.getText();
 
         boolean isValidated = validateBook();
         if (isValidated) {
             new Alert(Alert.AlertType.INFORMATION, "Book validated");
-            var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
+            var dto = new BooksManagementDTO(id, title, author, genre, price, availability, user_id);
 
             try {
                 boolean isSaved = bookDAOImpl.save(dto);
@@ -239,6 +241,7 @@ public class BooksManageFormController {
         txtAuthor.setText("");
         txtAvailability.setText("");
         txtGenre.setText("");
+        txtPrice.setText("");
         txtTitle.setText("");
         txtUserId.setText("");
     }
@@ -248,6 +251,7 @@ public class BooksManageFormController {
         String title = txtTitle.getText();
         String author = txtAuthor.getText();
         String genre = txtGenre.getText();
+        double price = Double.parseDouble(txtPrice.getText());
         String availability = txtAvailability.getText();
         String user_id = txtUserId.getText();
 
@@ -255,7 +259,7 @@ public class BooksManageFormController {
         if (isValidated){
             new Alert(Alert.AlertType.INFORMATION,"Validated");
 
-            var dto = new BooksManagementDTO(id, title, author, genre, availability, user_id);
+            var dto = new BooksManagementDTO(id, title, author, genre,price , availability, user_id);
 
             try {
                 boolean isUpdated = bookDAOImpl.update(dto);

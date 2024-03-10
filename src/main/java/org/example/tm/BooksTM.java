@@ -5,17 +5,19 @@ public class BooksTM {
     private String title;
     private String author;
     private String genre;
+    private double price;
     private String availability_status;
     private String user_id;
 
     public BooksTM() {
     }
 
-    public BooksTM(String id, String title, String author, String genre, String availability_status, String user_id) {
+    public BooksTM(String id, String title, String author, String genre, double price, String availability_status, String user_id) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.genre = genre;
+        this.price = price;
         this.availability_status = availability_status;
         this.user_id = user_id;
     }
@@ -58,6 +60,14 @@ public class BooksTM {
 
     public void setGenre(String genre) {
         this.genre = genre;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
     }
 
     public String getAvailability_status() {
