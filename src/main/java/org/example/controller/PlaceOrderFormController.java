@@ -1,5 +1,6 @@
 package org.example.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -36,8 +37,7 @@ import java.util.Optional;
 public class PlaceOrderFormController {
 
     @FXML
-    private Button btnAddToCart;
-
+    private JFXButton btnAddToCart;
     @FXML
     private JFXComboBox<String> cmbBookId;
 

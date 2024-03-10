@@ -1,0 +1,17 @@
+
+
+.table-view:focused{
+    -fx-background-color: transparent;
+}
+
+.table-row-cell:odd{
+    -fx-background-color: #ffffff;
+    -fx-background-insets:0, 0 0 1 0 ;
+    -fx-padding: 0.0em;
+}
+
+.table-row-cell:even{
+    -fx-background-color: #CE6C00;
+    -fx-background-insets:0, 0 0 1 0 ;
+    -fx-padding: 0.0em;
+}
