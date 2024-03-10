@@ -10,6 +10,7 @@
             <Button layoutX="82.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnUserOnAction" text="User Registration Form" />
             <Button layoutX="243.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnBooksOnAction" text="Books Manage Form" />
             <Button layoutX="398.0" layoutY="117.0" mnemonicParsing="false" onAction="#btnUserManageOnAction" text="UserManage Form" />
+            <Button layoutX="255.0" layoutY="188.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" text="Place Order Form" />
          </children>
       </AnchorPane>
    </children>

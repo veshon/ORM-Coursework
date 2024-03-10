@@ -5,9 +5,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.example.dao.custom.BookDAO;
 import org.example.dao.custom.OrderDAO;
 import org.example.dao.custom.PlaceOrderDAO;
@@ -21,6 +26,7 @@ import org.example.dto.PlaceOrderDTO;
 import org.example.dto.UserRegistrationDTO;
 import org.example.tm.CartTm;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -48,6 +54,18 @@ public class PlaceOrderFormController {
     private TableColumn<?, ?> colBookName;
 
     @FXML
+    private TableColumn<?, ?> colQty;
+
+    @FXML
+    private TableColumn<?, ?> colTotal;
+
+    @FXML
+    private TableColumn<?, ?> colUnitPrice;
+
+    @FXML
+    private TextField txtQty;
+
+    @FXML
     private Label lblBookName;
 
     @FXML
@@ -58,8 +76,13 @@ public class PlaceOrderFormController {
 
     @FXML
     private Label lblUserName;
+
     @FXML
     private TableView<CartTm> tblOrderCart;
+
+    private static Stage stage;
+    private static Scene scene;
+    private static Parent parent;
 
     OrderDAO orderDAO = new OrderDAOImpl();
     UserDAO userDAO = new UserDAOImpl();
@@ -78,14 +101,15 @@ public class PlaceOrderFormController {
     private void setCellValueFactory() {
         colBookId.setCellValueFactory(new PropertyValueFactory<>("code"));
         colBookName.setCellValueFactory(new PropertyValueFactory<>("description"));
-        // colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
-        // colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
-        // colTotal.setCellValueFactory(new PropertyValueFactory<>("tot"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unitPrice"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("tot"));
         colAction.setCellValueFactory(new PropertyValueFactory<>("btn"));
     }
     private void setDate() {
         lblOrderDate.setText(String.valueOf(LocalDate.now()));
     }
+
     private void loadBookIds() {
         ObservableList<String> obList = FXCollections.observableArrayList();
         try {
@@ -101,7 +125,8 @@ public class PlaceOrderFormController {
     }
 
     private void loadUserIds() {
-/*        ObservableList<String> obList = FXCollections.observableArrayList();
+/*
+        ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
             List<UserRegistrationDTO> idList = userDAO.getAll();
@@ -113,7 +138,8 @@ public class PlaceOrderFormController {
             cmbUserId.setItems(obList);
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
-        }*/
+        }
+*/
     }
 
 
@@ -187,7 +213,7 @@ public class PlaceOrderFormController {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
-/*        String orderId = lblOrderId.getText();
+        String orderId = lblOrderId.getText();
         LocalDate date = LocalDate.parse(lblOrderDate.getText());
         String customerId = cmbUserId.getValue();
 
@@ -203,7 +229,7 @@ public class PlaceOrderFormController {
         boolean isSuccess = placeOrderDAO.placeOrder(placeOrderDto);
         if (isSuccess) {
             new Alert(Alert.AlertType.CONFIRMATION, "Order Success!").show();
-        }*/
+        }
     }
 
     @FXML
@@ -231,5 +257,17 @@ public class PlaceOrderFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+    }
+    @FXML
+    void btnHomeOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    public void txtQtyOnAction(ActionEvent actionEvent) {
     }
 }
