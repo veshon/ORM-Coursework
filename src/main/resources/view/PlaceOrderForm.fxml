@@ -7,13 +7,20 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.PlaceOrderFormController">
+<AnchorPane prefHeight="650.0" prefWidth="1211.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.PlaceOrderFormController">
    <children>
-      <Pane prefHeight="700.0" prefWidth="677.0" style="-fx-background-color: blue;">
+      <ImageView fitHeight="796.0" fitWidth="1444.0">
+         <image>
+            <Image url="@../images/library%20animated.jpg" />
+         </image>
+      </ImageView>
+      <Pane layoutX="-6.0" layoutY="52.0" prefHeight="660.0" prefWidth="677.0" style="-fx-background-color: white;">
          <children>
             <Button fx:id="btnAddToCart" layoutX="467.0" layoutY="543.0" mnemonicParsing="false" onAction="#btnAddToCartOnAction" text="Add To Cart" />
             <Button layoutX="306.0" layoutY="623.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" text="Place Order" />
@@ -28,12 +35,12 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Label>
-      <Label layoutX="156.0" layoutY="126.0" text="Order Id:" textFill="WHITE">
+      <Label layoutX="156.0" layoutY="126.0" text="Order Id:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="151.0" layoutY="197.0" text="User ID:" textFill="WHITE">
+      <Label layoutX="151.0" layoutY="197.0" text="User ID:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -43,7 +50,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXComboBox>
-      <Label layoutX="151.0" layoutY="272.0" text="Book ID:" textFill="WHITE">
+      <Label layoutX="151.0" layoutY="272.0" text="Book ID:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -58,12 +65,12 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <Label layoutX="448.0" layoutY="275.0" text="Book Name:" textFill="WHITE">
+      <Label layoutX="448.0" layoutY="275.0" text="Book Name:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="151.0" layoutY="375.0" text="User Name:" textFill="WHITE">
+      <Label layoutX="151.0" layoutY="375.0" text="User Name:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -73,17 +80,17 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TableView fx:id="tblOrderCart" layoutX="710.0" layoutY="457.0" prefHeight="200.0" prefWidth="603.0">
+      <TableView fx:id="tblOrderCart" layoutX="676.0" layoutY="457.0" prefHeight="200.0" prefWidth="637.0">
         <columns>
-          <TableColumn fx:id="colBookId" prefWidth="75.0" text="ID" />
-          <TableColumn fx:id="colBookName" prefWidth="75.0" text="Book Name" />
-            <TableColumn fx:id="colTotal" prefWidth="75.0" text="Total" />
-            <TableColumn fx:id="colQty" prefWidth="75.0" text="Qty" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="75.0" text="Unit Price" />
-            <TableColumn fx:id="colAction" prefWidth="75.0" text="Action" />
+          <TableColumn fx:id="colBookId" prefWidth="74.3333740234375" text="ID" />
+          <TableColumn fx:id="colBookName" prefWidth="114.6666259765625" text="Book Name" />
+            <TableColumn fx:id="colTotal" prefWidth="113.0" text="Total" />
+            <TableColumn fx:id="colQty" prefWidth="84.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="123.0" text="Unit Price" />
+            <TableColumn fx:id="colAction" prefWidth="130.6666259765625" text="Action" />
         </columns>
       </TableView>
-      <Label layoutX="397.0" layoutY="120.0" text="Order date:" textFill="WHITE">
+      <Label layoutX="397.0" layoutY="120.0" text="Order date:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -93,7 +100,7 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="445.0" layoutY="373.0" text="Unit Price:" textFill="WHITE">
+      <Label layoutX="445.0" layoutY="373.0" text="Unit Price:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -103,7 +110,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="451.0" layoutY="464.0" text="Qty:" textFill="WHITE">
+      <Label layoutX="451.0" layoutY="464.0" text="Qty:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -113,7 +120,7 @@
             <Cursor fx:constant="TEXT" />
          </cursor>
       </TextField>
-      <Label layoutX="154.0" layoutY="547.0" text="Net Total:" textFill="WHITE">
+      <Label layoutX="154.0" layoutY="547.0" text="Net Total:">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>

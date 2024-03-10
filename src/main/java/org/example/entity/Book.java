@@ -1,13 +1,13 @@
 package org.example.entity;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Book {
+
     @Id
+    @Column(nullable = false)
+
     private String id;
     private String title;
     private String author;
@@ -16,7 +16,6 @@ public class Book {
     private String availability_status;
     @ManyToOne(cascade = CascadeType.ALL)
     private User user;
-
 
     public Book() {
     }
