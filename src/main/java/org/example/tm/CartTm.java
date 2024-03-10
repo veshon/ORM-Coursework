@@ -5,17 +5,20 @@ import javafx.scene.control.Button;
 public class CartTm {
     private String code;
     private String description;
-/*    private int qty;
+    private int qty;
     private double unitPrice;
-    private double tot;*/
+    private double tot;
     private Button btn;
 
     public CartTm() {
     }
 
-    public CartTm(String code, String description, Button btn) {
+    public CartTm(String code, String description, int qty, double unitPrice, double tot, Button btn) {
         this.code = code;
         this.description = description;
+        this.qty = qty;
+        this.unitPrice = unitPrice;
+        this.tot = tot;
         this.btn = btn;
     }
 
@@ -33,6 +36,30 @@ public class CartTm {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public int getQty() {
+        return qty;
+    }
+
+    public void setQty(int qty) {
+        this.qty = qty;
+    }
+
+    public double getUnitPrice() {
+        return unitPrice;
+    }
+
+    public void setUnitPrice(double unitPrice) {
+        this.unitPrice = unitPrice;
+    }
+
+    public double getTot() {
+        return tot;
+    }
+
+    public void setTot(double tot) {
+        this.tot = tot;
     }
 
     public Button getBtn() {

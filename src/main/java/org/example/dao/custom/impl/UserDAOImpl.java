@@ -2,6 +2,7 @@ package org.example.dao.custom.impl;
 
 import org.example.dao.custom.UserDAO;
 import org.example.db.DbConnection;
+import org.example.dto.BooksManagementDTO;
 import org.example.dto.UserRegistrationDTO;
 
 import java.sql.Connection;
@@ -13,7 +14,26 @@ import java.util.ArrayList;
 public class UserDAOImpl implements UserDAO {
     @Override
     public ArrayList<UserRegistrationDTO> getAll() throws SQLException, ClassNotFoundException {
-        return null;
+        Connection connection = DbConnection.getInstance().getConnection();
+
+        String sql = "SELECT * FROM user";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        ArrayList<UserRegistrationDTO> dtoList = new ArrayList<>();
+
+        while(resultSet.next()) {
+            dtoList.add(
+                    new UserRegistrationDTO(
+                            resultSet.getString(1),
+                            resultSet.getString(2),
+                            resultSet.getString(3),
+                            resultSet.getString(4),
+                            resultSet.getString(5)
+                    )
+            );
+        }
+        return dtoList;
     }
 
     @Override
@@ -59,7 +79,26 @@ public class UserDAOImpl implements UserDAO {
 
     @Override
     public UserRegistrationDTO search(String id) throws SQLException, ClassNotFoundException {
-        return null;
+        Connection connection = DbConnection.getInstance().getConnection ();
+
+        String sql = "SELECT * FROM user WHERE id = ?";
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setString(1, id);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        UserRegistrationDTO dto = null;
+
+        if(resultSet.next()) {
+            String User_id = resultSet.getString(1);
+            String name = resultSet.getString(2);
+            String address = resultSet.getString(3);
+            String email = resultSet.getString(4);
+            String password = resultSet.getString(5);
+
+            dto = new UserRegistrationDTO(User_id, name, address, email,password);
+        }
+        return dto;
     }
 
     public String generateNexUserId() throws SQLException {

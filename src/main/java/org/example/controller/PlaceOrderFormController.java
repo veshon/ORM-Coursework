@@ -69,6 +69,9 @@ public class PlaceOrderFormController {
     private Label lblBookName;
 
     @FXML
+    private Label lblUnitPrice;
+
+    @FXML
     private Label lblOrderDate;
 
     @FXML
@@ -76,6 +79,9 @@ public class PlaceOrderFormController {
 
     @FXML
     private Label lblUserName;
+
+    @FXML
+    private Label lblNetTotal;
 
     @FXML
     private TableView<CartTm> tblOrderCart;
@@ -125,7 +131,6 @@ public class PlaceOrderFormController {
     }
 
     private void loadUserIds() {
-/*
         ObservableList<String> obList = FXCollections.observableArrayList();
 
         try {
@@ -139,7 +144,6 @@ public class PlaceOrderFormController {
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
-*/
     }
 
 
@@ -157,9 +161,9 @@ public class PlaceOrderFormController {
     void btnAddToCartOnAction(ActionEvent event) {
         String code = cmbBookId.getValue();
         String description = lblBookName.getText();
-       // int qty = Integer.parseInt(txtQty.getText());
-        //double unitPrice = Double.parseDouble(lblUnitPrice.getText());
-        //double tot = unitPrice * qty;
+        int qty = Integer.parseInt(txtQty.getText());
+        double unitPrice = Double.parseDouble(lblUnitPrice.getText());
+        double tot = unitPrice * qty;
         Button btn = new Button("Remove");
 
         setRemoveBtnAction(btn);
@@ -169,12 +173,12 @@ public class PlaceOrderFormController {
         if (!obList.isEmpty()) {
             for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
                 if (colBookId.getCellData(i).equals(code)) {
-                    //int col_qty = (int) colQty.getCellData(i);
-                   // qty += col_qty;
-                    //tot = unitPrice * qty;
+                    int col_qty = (int) colQty.getCellData(i);
+                    qty += col_qty;
+                    tot = unitPrice * qty;
 
-                   // obList.get(i).setQty(qty);
-                   // obList.get(i).setTot(tot);
+                    obList.get(i).setQty(qty);
+                    obList.get(i).setTot(tot);
 
                     calculateTotal();
                     tblOrderCart.refresh();
@@ -182,13 +186,13 @@ public class PlaceOrderFormController {
                 }
             }
         }
-        var cartTm = new CartTm(code, description, btn);
+        var cartTm = new CartTm(code, description, qty, unitPrice, tot, btn);
 
         obList.add(cartTm);
 
         tblOrderCart.setItems(obList);
         calculateTotal();
-        //txtQty.clear();
+        txtQty.clear();
     }
 
     private void setRemoveBtnAction(Button btn) {
@@ -209,10 +213,15 @@ public class PlaceOrderFormController {
     }
 
     private void calculateTotal() {
+        double total = 0;
+        for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
+            total += (double) colTotal.getCellData(i);
+        }
+        lblNetTotal.setText(String.valueOf(total));
     }
 
     @FXML
-    void btnPlaceOrderOnAction(ActionEvent event) {
+    void btnPlaceOrderOnAction(ActionEvent event) throws SQLException {
         String orderId = lblOrderId.getText();
         LocalDate date = LocalDate.parse(lblOrderDate.getText());
         String customerId = cmbUserId.getValue();
@@ -236,12 +245,11 @@ public class PlaceOrderFormController {
     void cmbBookOnAction(ActionEvent event) {
         String code = cmbBookId.getValue();
 
-        //txtQty.requestFocus();
+        txtQty.requestFocus();
         try {
             BooksManagementDTO dto = bookDAO.search(code);
             lblBookName.setText(dto.getTitle());
-            //lblUnitPrice.setText(String.valueOf(dto.getUnitPrice()));
-//            lblQtyOnHand.setText(String.valueOf(dto.getQtyOnHand()));
+            lblUnitPrice.setText(String.valueOf(dto.getPrice()));
         } catch (SQLException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -250,6 +258,7 @@ public class PlaceOrderFormController {
     @FXML
     void cmbUserOnAction(ActionEvent event) {
         String id = cmbUserId.getValue();
+
         try {
             UserRegistrationDTO userRegistrationDTO = userDAO.search(id);
             lblUserName.setText(userRegistrationDTO.getName());
@@ -269,5 +278,6 @@ public class PlaceOrderFormController {
     }
 
     public void txtQtyOnAction(ActionEvent actionEvent) {
+        btnAddToCartOnAction(actionEvent);
     }
 }
