@@ -1,47 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.UserRegistrationFormController">
    <children>
       <AnchorPane prefHeight="650.0" prefWidth="1100.0">
          <children>
-            <Label layoutX="442.0" layoutY="22.0" text="User Registration">
-               <font>
-                  <Font name="System Bold" size="40.0" />
-               </font></Label>
-            <TextField fx:id="txtName" layoutX="309.0" layoutY="293.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your name" />
-            <TextField fx:id="txtPassword" layoutX="696.0" layoutY="299.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your password" />
-            <TextField fx:id="txtEmail" layoutX="693.0" layoutY="186.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your e-mail address" />
-            <Label layoutX="316.0" layoutY="261.0" text="Name">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label layoutX="711.0" layoutY="272.0" text="Password">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label layoutX="700.0" layoutY="154.0" text="E-mail">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Button layoutX="533.0" layoutY="505.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Save" />
-            <Button layoutX="640.0" layoutY="505.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Clear" />
-            <TextField fx:id="txtId" layoutX="313.0" layoutY="188.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your id" />
-            <Label layoutX="313.0" layoutY="153.0" text="User ID">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <TextField fx:id="txtAddress" layoutX="308.0" layoutY="389.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your address" />
-            <Label layoutX="313.0" layoutY="357.0" text="Address">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Button layoutX="7.0" layoutY="7.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="45.0" prefWidth="83.0" text="Home" />
+            <ImageView fitHeight="696.0" fitWidth="795.0" layoutX="306.0" layoutY="-49.0">
+               <image>
+                  <Image url="@../images/library%20pc.png" />
+               </image>
+            </ImageView>
+            <Pane layoutX="-203.0" layoutY="-3.0" prefHeight="658.0" prefWidth="773.0" style="-fx-background-radius: 100;" styleClass="pane" stylesheets="@../css/Pane.css">
+               <children>
+                  <TextField fx:id="txtPassword" layoutX="270.0" layoutY="553.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your password" style="-fx-background-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <TextField fx:id="txtEmail" layoutX="272.0" layoutY="454.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your e-mail address" style="-fx-background-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="294.0" layoutY="530.0" text="Password" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="297.0" layoutY="426.0" text="E-mail" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="329.0" layoutY="12.0" text="Registration" textFill="#fe8722">
+                     <font>
+                        <Font name="Bookman Old Style Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtName" layoutX="272.0" layoutY="248.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your name" style="-fx-background-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="289.0" layoutY="223.0" text="Name" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtAddress" layoutX="273.0" layoutY="353.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your address" style="-fx-background-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="289.0" layoutY="329.0" text="Address" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtId" layoutX="273.0" layoutY="149.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter your ID" style="-fx-background-radius: 50;">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="293.0" layoutY="123.0" text="User ID" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <JFXButton layoutX="595.0" layoutY="497.0" onAction="#btnClearOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Cancel" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="595.0" layoutY="416.0" onAction="#btnSaveOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Confirm" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton layoutX="211.0" layoutY="8.0" onAction="#btnHomeOnAction" prefHeight="40.0" prefWidth="13.0" style="-fx-background-radius: 50;" stylesheets="@../css/homeButton.css" text=".">
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-home-48.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+            </Pane>
          </children>
       </AnchorPane>
    </children>
