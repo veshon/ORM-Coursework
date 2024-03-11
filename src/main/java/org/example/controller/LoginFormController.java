@@ -1,4 +1,3 @@
-/*
 package org.example.controller;
 
 import javafx.animation.Animation;
@@ -52,7 +51,7 @@ public class LoginFormController {
             PreparedStatement preparedStatement = connection.prepareStatement(query);
 
             // Set any parameters in the query
-            preparedStatement.setString(1, "name");
+            //preparedStatement.setString(1, "name");
 
             // Execute the query and get the result set
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -95,4 +94,3 @@ public class LoginFormController {
     }
 
 }
-*/

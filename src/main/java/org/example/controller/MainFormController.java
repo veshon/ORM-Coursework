@@ -7,13 +7,21 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import org.example.db.DbConnection;
 
-
+import javax.swing.*;
 import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
 
 public class MainFormController {
+    @FXML
+    private Label lblBookCount;
+    @FXML
+    private Label lblUseCount;
 
     private static Stage stage;
     private static Scene scene;
@@ -57,4 +65,13 @@ public class MainFormController {
         stage.show();
     }
 
+    @FXML
+    void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
 }

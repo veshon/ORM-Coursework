@@ -23,7 +23,7 @@
       </ImageView>
       <Pane layoutX="18.0" layoutY="18.0" prefHeight="625.0" prefWidth="577.0" style="-fx-background-radius: 100;" styleClass="pane" stylesheets="@../css/Pane.css">
          <children>
-            <Button layoutX="122.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="319.0" style="-fx-background-radius: 50;" text="Place Order">
+            <Button layoutX="122.0" layoutY="560.0" mnemonicParsing="false" onAction="#btnPlaceOrderOnAction" prefHeight="42.0" prefWidth="319.0" style="-fx-background-radius: 50;" stylesheets="@../css/RegisterFormBtn.css" text="Place Order" textFill="WHITE">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -103,6 +103,18 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="283.0" layoutY="175.0" onAction="#btnAddOnAction" prefHeight="38.0" prefWidth="60.0" style="-fx-background-radius: 50;" text=".">
+               <graphic>
+                  <ImageView fitHeight="27.0" fitWidth="27.0">
+                     <image>
+                        <Image url="@../images/icons8-plus-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </Pane>
       <Label fx:id="lblOrderId" layoutX="144.0" layoutY="125.0" prefHeight="32.0" prefWidth="118.0" textFill="#eeb844">
@@ -123,7 +135,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbUserId" focusColor="#388dee" layoutX="132.0" layoutY="194.0" onAction="#cmbUserOnAction" prefHeight="33.0" prefWidth="173.0" promptText="User ID" unFocusColor="WHITE">
+      <JFXComboBox fx:id="cmbUserId" focusColor="WHITE" layoutX="132.0" layoutY="194.0" onAction="#cmbUserOnAction" prefHeight="33.0" prefWidth="173.0" promptText="User ID" stylesheets="@../css/cmb.css" unFocusColor="#fe8722">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -133,7 +145,7 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbBookId" focusColor="#388dee" layoutX="70.0" layoutY="300.0" onAction="#cmbBookOnAction" prefHeight="33.0" prefWidth="173.0" promptText="Book ID" unFocusColor="WHITE">
+      <JFXComboBox fx:id="cmbBookId" focusColor="WHITE" layoutX="70.0" layoutY="300.0" onAction="#cmbBookOnAction" prefHeight="33.0" prefWidth="173.0" promptText="Book ID" stylesheets="@../css/cmb.css" unFocusColor="#fe8722">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

@@ -1,54 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BooksManageFormController">
    <children>
       <AnchorPane prefHeight="650.0" prefWidth="1100.0">
          <children>
-            <Label layoutX="363.0" layoutY="2.0" text="Books Managemrnt">
+            <ImageView fitHeight="461.0" fitWidth="1105.0" layoutX="1.0" layoutY="-4.0">
+               <image>
+                  <Image url="@../images/lib11.jpg" />
+               </image>
+            </ImageView>
+            <Pane layoutX="161.0" layoutY="6.0" prefHeight="435.0" prefWidth="874.0" style="-fx-background-radius: 50;" styleClass="pane" stylesheets="@../css/Pane.css">
+               <children>
+                  <TextField fx:id="txtTitle" layoutX="40.0" layoutY="182.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txtAvailability" layoutX="415.0" layoutY="185.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txtAuthor" layoutX="38.0" layoutY="265.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter author " style="-fx-background-radius: 30;" />
+                  <TextField fx:id="txtGenre" layoutX="38.0" layoutY="347.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
+                  <Button layoutX="346.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Save" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="449.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="552.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Clear" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="655.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Remove" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="758.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Search" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="54.0" layoutY="324.0" text="Genre" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="431.0" layoutY="163.0" text="Availability " textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="57.0" layoutY="241.0" text="Author" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtId" layoutX="37.0" layoutY="102.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
+                  <Label layoutX="52.0" layoutY="79.0" text="Book ID" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtUserId" layoutX="413.0" layoutY="268.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter User ID" style="-fx-background-radius: 30;" />
+                  <Label layoutX="430.0" layoutY="245.0" text="User ID" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="56.0" layoutY="161.0" text="Title" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtPrice" layoutX="412.0" layoutY="102.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter Price" style="-fx-background-radius: 30;" />
+                  <Label layoutX="441.0" layoutY="78.0" text="Price" textFill="#fe8722">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="363.0" layoutY="3.0" text="Books Management" textFill="#fe8722">
                <font>
                   <Font name="System Bold" size="40.0" />
                </font></Label>
-            <TextField fx:id="txtTitle" layoutX="217.0" layoutY="208.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
-            <TextField fx:id="txtAvailability" layoutX="592.0" layoutY="203.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
-            <TextField fx:id="txtAuthor" layoutX="215.0" layoutY="291.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter author " style="-fx-background-radius: 30;" />
-            <TextField fx:id="txtGenre" layoutX="215.0" layoutY="373.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
-            <Button layoutX="523.0" layoutY="369.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" text="Save">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Button layoutX="755.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" text="Clear">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Button layoutX="633.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" text="Update">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Button layoutX="869.0" layoutY="371.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" text="Remove">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Label layoutX="231.0" layoutY="350.0" text="Genre">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label layoutX="608.0" layoutY="181.0" text="Availability ">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Label layoutX="234.0" layoutY="267.0" text="Author">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <TableView fx:id="tble" layoutY="438.0" prefHeight="211.0" prefWidth="1099.0">
+            <TableView fx:id="tble" layoutY="458.0" prefHeight="191.0" prefWidth="1099.0" stylesheets="@../css/table.css">
               <columns>
                 <TableColumn fx:id="colId" prefWidth="119.0" text="ID" />
                 <TableColumn fx:id="colTitle" prefWidth="172.00001525878906" text="Title" />
@@ -59,35 +123,18 @@
                   <TableColumn fx:id="colPrice" prefWidth="179.0" text="Price" />
               </columns>
             </TableView>
-            <TextField fx:id="txtId" layoutX="214.0" layoutY="128.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
-            <Label layoutX="229.0" layoutY="105.0" text="Book ID">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <TextField fx:id="txtUserId" layoutX="592.0" layoutY="288.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter User ID" style="-fx-background-radius: 30;" />
-            <Label layoutX="607.0" layoutY="267.0" text="User ID">
-               <font>
-                  <Font size="15.0" />
-               </font></Label>
-            <Button layoutX="5.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="45.0" prefWidth="83.0" text="Home">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Button layoutX="981.0" layoutY="372.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" text="Search">
-               <font>
-                  <Font size="15.0" />
-               </font></Button>
-            <Label layoutX="233.0" layoutY="187.0" text="Title">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
-            <TextField fx:id="txtPrice" layoutX="589.0" layoutY="120.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter Price" style="-fx-background-radius: 30;" />
-            <Label layoutX="618.0" layoutY="96.0" text="Price">
-               <font>
-                  <Font size="15.0" />
-               </font>
-            </Label>
+            <JFXButton buttonType="RAISED" layoutX="8.0" layoutY="4.0" onAction="#btnHomeOnAction" prefHeight="22.0" prefWidth="43.0" style="-fx-background-radius: 50;" stylesheets="@../css/homeButton.css" text=".">
+               <graphic>
+                  <ImageView fitHeight="44.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/icons8-home-48.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
          </children>
       </AnchorPane>
    </children>

@@ -76,7 +76,7 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
-                  <JFXButton layoutX="595.0" layoutY="497.0" onAction="#btnClearOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Cancel" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="595.0" layoutY="497.0" onAction="#btnClearOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Cancel" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -84,7 +84,7 @@
                         <Font name="System Bold" size="18.0" />
                      </font>
                   </JFXButton>
-                  <JFXButton layoutX="595.0" layoutY="416.0" onAction="#btnSaveOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Confirm" textFill="WHITE">
+                  <JFXButton buttonType="RAISED" layoutX="595.0" layoutY="416.0" onAction="#btnSaveOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Confirm" textFill="WHITE">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
