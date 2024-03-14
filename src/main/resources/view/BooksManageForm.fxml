@@ -11,6 +11,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.BooksManageFormController">
@@ -22,52 +23,12 @@
                   <Image url="@../images/lib11.jpg" />
                </image>
             </ImageView>
-            <Pane layoutX="161.0" layoutY="6.0" prefHeight="435.0" prefWidth="874.0" style="-fx-background-radius: 50;" styleClass="pane" stylesheets="@../css/Pane.css">
+            <Pane layoutX="161.0" layoutY="6.0" prefHeight="435.0" prefWidth="889.0" style="-fx-background-radius: 50;" styleClass="pane" stylesheets="@../css/Pane.css">
                <children>
                   <TextField fx:id="txtTitle" layoutX="40.0" layoutY="182.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter title" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtAvailability" layoutX="415.0" layoutY="185.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter availability status" style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtAuthor" layoutX="38.0" layoutY="265.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter author " style="-fx-background-radius: 30;" />
                   <TextField fx:id="txtGenre" layoutX="38.0" layoutY="347.0" prefHeight="45.0" prefWidth="260.0" promptText="Enter genre" style="-fx-background-radius: 30;" />
-                  <Button layoutX="346.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnSaveOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Save" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="449.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Update" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="552.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Clear" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="655.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Remove" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="758.0" layoutY="349.0" minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="83.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Search" textFill="WHITE">
-                     <font>
-                        <Font name="System Bold" size="15.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
                   <Label layoutX="54.0" layoutY="324.0" text="Genre" textFill="#fe8722">
                      <font>
                         <Font name="System Bold" size="15.0" />
@@ -106,6 +67,85 @@
                         <Font name="System Bold" size="15.0" />
                      </font>
                   </Label>
+                  <VBox layoutX="750.0" layoutY="99.0" prefHeight="378.0" prefWidth="146.0" spacing="25.0">
+                     <children>
+                        <Button minHeight="35.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnSaveOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Save" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="32.0">
+                                 <image>
+                                    <Image url="@../images/user/icons8-add-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button minHeight="45.0" minWidth="75.0" mnemonicParsing="false" onAction="#btnUpdateOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="29.0" fitWidth="32.0">
+                                 <image>
+                                    <Image url="@../images/user/icons8-update-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnClearOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Clear" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="34.0" fitWidth="34.0">
+                                 <image>
+                                    <Image url="@../images/user/icons8-erase-50.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#btnDeleteOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Remove" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../images/user/icons8-delete-24.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button minHeight="45.0" minWidth="83.0" mnemonicParsing="false" onAction="#txtSearchOnAction" prefHeight="45.0" prefWidth="130.0" style="-fx-background-radius: 30;" stylesheets="@../css/RegisterFormBtn.css" text="Search" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <graphic>
+                              <ImageView fitHeight="38.0" fitWidth="38.0">
+                                 <image>
+                                    <Image url="@../images/user/icons8-search-90.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </VBox>
                </children>
             </Pane>
             <Label layoutX="363.0" layoutY="3.0" text="Books Management" textFill="#fe8722">
@@ -131,6 +171,21 @@
                      </image>
                   </ImageView>
                </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton buttonType="RAISED" layoutX="1033.0" layoutY="-6.0" onAction="#btnReportOnAction" prefHeight="57.0" prefWidth="73.0" text="." textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="42.0" fitWidth="41.0">
+                     <image>
+                        <Image url="@../images/icons8-report-90.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="1.0" />
+               </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

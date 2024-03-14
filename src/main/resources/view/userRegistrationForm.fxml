@@ -83,6 +83,13 @@
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="44.0">
+                           <image>
+                              <Image url="@../images/icons8-cancel-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" layoutX="595.0" layoutY="416.0" onAction="#btnSaveOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Confirm" textFill="WHITE">
                      <cursor>
@@ -91,6 +98,13 @@
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="42.0">
+                           <image>
+                              <Image url="@../images/icons8-confirm-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton layoutX="211.0" layoutY="8.0" onAction="#btnHomeOnAction" prefHeight="40.0" prefWidth="13.0" style="-fx-background-radius: 50;" stylesheets="@../css/homeButton.css" text=".">
                      <graphic>

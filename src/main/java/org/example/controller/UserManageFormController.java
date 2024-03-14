@@ -160,7 +160,7 @@ public class UserManageFormController {
 
     @FXML
     void btnReportOnAction(ActionEvent event) throws JRException, SQLException {
-        InputStream inputStream = getClass().getResourceAsStream("/reports/UserReport.jrxml");
+        InputStream inputStream = getClass().getResourceAsStream("/Reports/UserReport.jrxml");
         JasperDesign load = JRXmlLoader.load(inputStream);
 
         JasperReport jasperReport = JasperCompileManager.compileReport(load);

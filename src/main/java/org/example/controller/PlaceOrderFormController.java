@@ -14,6 +14,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.example.dao.custom.BookDAO;
 import org.example.dao.custom.OrderDAO;
 import org.example.dao.custom.PlaceOrderDAO;
@@ -22,12 +26,14 @@ import org.example.dao.custom.impl.BookDAOImpl;
 import org.example.dao.custom.impl.OrderDAOImpl;
 import org.example.dao.custom.impl.PlaceOrderDAOImpl;
 import org.example.dao.custom.impl.UserDAOImpl;
+import org.example.db.DbConnection;
 import org.example.dto.BooksManagementDTO;
 import org.example.dto.PlaceOrderDTO;
 import org.example.dto.UserRegistrationDTO;
 import org.example.tm.CartTm;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.util.List;
@@ -285,6 +291,21 @@ public class PlaceOrderFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
+    }
+
+    @FXML
+    void btnReportOnAction(ActionEvent event) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Reports/Order.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+
+
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
+        JasperViewer.viewReport(jasperPrint, false);
     }
 
     public void txtQtyOnAction(ActionEvent actionEvent) {

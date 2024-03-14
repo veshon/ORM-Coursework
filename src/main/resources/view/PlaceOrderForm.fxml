@@ -115,6 +115,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <ImageView fitHeight="38.0" fitWidth="41.0" layoutX="162.0" layoutY="562.0">
+               <image>
+                  <Image url="@../images/place%20order.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
       <Label fx:id="lblOrderId" layoutX="144.0" layoutY="125.0" prefHeight="32.0" prefWidth="118.0" textFill="#eeb844">
@@ -180,5 +185,20 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <JFXButton buttonType="RAISED" layoutX="1240.0" layoutY="-1.0" onAction="#btnReportOnAction" prefHeight="47.0" prefWidth="74.0" text="." textFill="WHITE">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-report-90.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
    </children>
 </AnchorPane>

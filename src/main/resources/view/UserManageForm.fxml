@@ -64,6 +64,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="38.0" fitWidth="37.0">
+                           <image>
+                              <Image url="@../images/user/icons8-search-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" layoutX="524.0" layoutY="238.0" onAction="#btnUpdateOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Update" textFill="WHITE">
                      <font>
@@ -72,6 +79,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="33.0">
+                           <image>
+                              <Image url="@../images/user/icons8-update-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" layoutX="524.0" layoutY="319.0" onAction="#btnDeleteOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Remove" textFill="WHITE">
                      <font>
@@ -80,6 +94,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="34.0" fitWidth="33.0">
+                           <image>
+                              <Image url="@../images/user/icons8-delete-24.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" layoutX="524.0" layoutY="401.0" onAction="#btnReportOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Report" textFill="WHITE">
                      <font>
@@ -88,6 +109,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="44.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/icons8-report-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                   <JFXButton buttonType="RAISED" layoutX="524.0" layoutY="485.0" onAction="#btnClearOnAction" prefHeight="62.0" prefWidth="178.0" stylesheets="@../css/RegisterFormBtn.css" text="Clear" textFill="WHITE">
                      <font>
@@ -96,6 +124,13 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <graphic>
+                        <ImageView fitHeight="37.0" fitWidth="35.0">
+                           <image>
+                              <Image url="@../images/user/icons8-erase-50.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
                   </JFXButton>
                </children>
             </Pane>

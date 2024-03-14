@@ -14,13 +14,19 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import org.example.dao.custom.BookDAO;
 import org.example.dao.custom.impl.BookDAOImpl;
 import org.example.dao.custom.impl.UserDAOImpl;
+import org.example.db.DbConnection;
 import org.example.dto.BooksManagementDTO;
 import org.example.tm.BooksTM;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -321,5 +327,20 @@ public class BooksManageFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    @FXML
+    void btnReportOnAction(ActionEvent event) throws JRException, SQLException {
+        InputStream resourceAsStream = getClass().getResourceAsStream("/Reports/BooksReport.jrxml");
+        JasperDesign load = JRXmlLoader.load(resourceAsStream);
+
+
+        JasperReport jasperReport = JasperCompileManager.compileReport(load);
+        JasperPrint jasperPrint = JasperFillManager.fillReport(
+                jasperReport,
+                null,
+                DbConnection.getInstance().getConnection()
+        );
+        JasperViewer.viewReport(jasperPrint, false);
     }
 }
