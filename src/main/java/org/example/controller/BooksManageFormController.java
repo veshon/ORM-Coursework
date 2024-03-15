@@ -18,6 +18,8 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.example.bo.custom.BookBO;
+import org.example.bo.custom.impl.BookBOImpl;
 import org.example.dao.custom.BookDAO;
 import org.example.dao.custom.impl.BookDAOImpl;
 import org.example.dao.custom.impl.UserDAOImpl;
@@ -83,7 +85,7 @@ public class BooksManageFormController {
     ObservableList<BooksTM> obList = FXCollections.observableArrayList();
     private BookDAOImpl bookDAOImpl = new BookDAOImpl();
     public void initialize() {
-        loadAllCustomer();
+        loadAllBooks();
         setCellValueFactory();
         generateNextBookId();
     }
@@ -97,13 +99,14 @@ public class BooksManageFormController {
         colAvailability.setCellValueFactory(new PropertyValueFactory<>("availability"));
         colUserId.setCellValueFactory(new PropertyValueFactory<>("user_id"));
     }
-    private void loadAllCustomer() {
-        var model = new BookDAOImpl();
-        BookDAO bookDAO = new BookDAOImpl();
+    private void loadAllBooks() {
+
         tble.getItems().clear();
 
         try {
-            List<BooksManagementDTO> dtoList = model.getAll();
+            BookBO bookBO = new BookBOImpl();
+
+            List<BooksManagementDTO> dtoList = bookBO.getAllBook();
 
             for (BooksManagementDTO dto : dtoList) {
                 obList.add(
@@ -136,10 +139,13 @@ public class BooksManageFormController {
         boolean isValidated = validateDeleteBook();
         if (isValidated) {
             try {
-                boolean isDeleted = bookDAOImpl.delete(id);
+                BookBO bookBO = new BookBOImpl();
+
+                boolean isDeleted = bookBO.deleteBook(id);
+
                 if (isDeleted) {
                     obList.clear();
-                    loadAllCustomer();
+                    loadAllBooks();
 
                     new Alert(Alert.AlertType.CONFIRMATION, "Book deleted").show();
                 } else {
@@ -178,12 +184,13 @@ public class BooksManageFormController {
             var dto = new BooksManagementDTO(id, title, author, genre, price, availability, user_id);
 
             try {
-                boolean isSaved = bookDAOImpl.save(dto);
+                BookBO bookBO = new BookBOImpl();
+                boolean isSaved = bookBO.saveBook(dto);
 
                 if (isSaved) {
 
                     obList.clear();
-                    loadAllCustomer();
+                    loadAllBooks();
 
                     new Alert(Alert.AlertType.CONFIRMATION, "Book saved!").show();
                     clearFields();
@@ -268,10 +275,13 @@ public class BooksManageFormController {
             var dto = new BooksManagementDTO(id, title, author, genre,price , availability, user_id);
 
             try {
+                BookBO bookBO = new BookBOImpl();
+                bookBO.updateBook(dto);
+
                 boolean isUpdated = bookDAOImpl.update(dto);
                 if(isUpdated) {
                     obList.clear();
-                    loadAllCustomer();
+                    loadAllBooks();
 
                     new Alert(Alert.AlertType.CONFIRMATION, "Book updated!").show();
                     clearFields();
@@ -304,6 +314,7 @@ public class BooksManageFormController {
                 txtGenre.setText(booksManagementDTO.getGenre());
                 txtAvailability.setText(booksManagementDTO.getAvailability_status());
                 txtUserId.setText(booksManagementDTO.getUser_id());
+                txtPrice.setText(String.valueOf(booksManagementDTO.getPrice()));
             } else {
                 new Alert(Alert.AlertType.INFORMATION, "Book not found !!").show();
             }

@@ -13,6 +13,8 @@ import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import net.sf.jasperreports.view.JasperViewer;
+import org.example.bo.custom.UserBO;
+import org.example.bo.custom.impl.UserBOImpl;
 import org.example.dao.custom.UserDAO;
 import org.example.dao.custom.impl.UserDAOImpl;
 import org.example.db.DbConnection;
@@ -57,7 +59,8 @@ public class UserManageFormController {
         if (isvalidated) {
 
             try {
-                userDAO.delete(id);
+                UserBO userBO = new UserBOImpl();
+                userBO.deleteUser(id);
 
                 if(isvalidated) {
                     new Alert(Alert.AlertType.CONFIRMATION, "User deleted!").show();
@@ -123,12 +126,11 @@ public class UserManageFormController {
         boolean isValidated = validateUpdateUser();
         if (isValidated) {
             new Alert(Alert.AlertType.INFORMATION,"Validated");
+
             try {
 
-
-                userDAO.update(new UserRegistrationDTO(id, name, address, email, password));
-
-
+                UserBO userBO = new UserBOImpl();
+                userBO.updateUser(new UserRegistrationDTO(id, name, address, email, password));
 
                 if (isValidated) {
 

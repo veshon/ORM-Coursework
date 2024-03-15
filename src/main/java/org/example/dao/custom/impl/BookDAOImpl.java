@@ -71,14 +71,14 @@ public class BookDAOImpl implements BookDAO {
     @Override
     public boolean update(BooksManagementDTO dto) throws SQLException {
         Connection connection = DbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement("UPDATE book SET title=?, author=?, genre=?, price=?, availability_status=?, user_id=? WHERE id=?");
+        PreparedStatement pstm = connection.prepareStatement("UPDATE book SET title=?, author=?, genre=?, price=?, user_id=? WHERE id=?");
         pstm.setString(1,dto.getTitle());
         pstm.setString(2, dto.getAuthor());
         pstm.setString(3, dto.getGenre());
         pstm.setDouble(4, dto.getPrice());
-        pstm.setString(5, dto.getAvailability_status());
-        pstm.setString(6, dto.getUser_id());
-        pstm.setString(7, dto.getId());
+//        pstm.setString(5, dto.getAvailability_status());
+        pstm.setString(5, dto.getUser_id());
+        pstm.setString(6, dto.getId());
         return pstm.executeUpdate()> 0;
 
     }
