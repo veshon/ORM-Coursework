@@ -249,7 +249,7 @@
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="41" splitType="Stretch">
+		<band height="58" splitType="Stretch">
 			<staticText>
 				<reportElement positionType="Float" mode="Opaque" x="-1" y="10" width="556" height="30" backcolor="#E6E8E9" uuid="4c9c342e-3e8b-47d2-b3c8-f255cf40f10b"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">

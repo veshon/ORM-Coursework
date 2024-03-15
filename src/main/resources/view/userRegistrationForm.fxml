@@ -106,7 +106,7 @@
                         </ImageView>
                      </graphic>
                   </JFXButton>
-                  <JFXButton layoutX="211.0" layoutY="8.0" onAction="#btnHomeOnAction" prefHeight="40.0" prefWidth="13.0" style="-fx-background-radius: 50;" stylesheets="@../css/homeButton.css" text=".">
+                  <JFXButton buttonType="RAISED" layoutX="211.0" layoutY="8.0" onAction="#btnHomeOnAction" prefHeight="45.0" prefWidth="51.0" style="-fx-background-radius: 50;" stylesheets="@../css/homeButton.css" text=".">
                      <graphic>
                         <ImageView fitHeight="34.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -120,6 +120,9 @@
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
+                     <font>
+                        <Font size="1.0" />
+                     </font>
                   </JFXButton>
                </children>
             </Pane>

@@ -66,6 +66,16 @@ public class MainFormController {
     }
 
     @FXML
+    void btnReportOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/ReportsForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
+    @FXML
     void btnLogOutOnAction(ActionEvent actionEvent) throws IOException {
         parent = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
         stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();

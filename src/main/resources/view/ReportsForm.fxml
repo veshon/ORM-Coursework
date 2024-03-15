@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="org.example.controller.ReportsFormController"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="650.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.controller.ReportsFormController">
+   <children>
+      <ImageView fitHeight="785.0" fitWidth="1269.0" layoutX="-5.0" layoutY="-95.0">
+         <image>
+            <Image url="@../images/img.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="507.0" layoutY="-5.0" prefHeight="76.0" prefWidth="397.0" text="Report Form" textFill="#4447af">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="49.0" />
+         </font>
+      </Label>
+      <JFXButton buttonType="RAISED" layoutX="221.0" layoutY="570.0" onAction="#btnUserReportOnAction" prefHeight="117.0" prefWidth="250.0" style="-fx-background-radius: 40;" stylesheets="@../css/btnReport.css" text="User Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="521.0" layoutY="570.0" onAction="#btnBookReportOnAction" prefHeight="117.0" prefWidth="250.0" style="-fx-background-radius: 40;" stylesheets="@../css/btnReport.css" text="Book Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <JFXButton layoutX="821.0" layoutY="570.0" minWidth="250.0" onAction="#btnOrderReportOnAction" prefHeight="117.0" prefWidth="250.0" style="-fx-background-radius: 40;" stylesheets="@../css/btnReport.css" text="Order Report" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Button layoutX="6.0" layoutY="4.0" mnemonicParsing="false" onAction="#btnHomeOnAction" prefHeight="47.0" prefWidth="41.0" style="-fx-background-radius: 50;" stylesheets="@../css/btnReport.css">
+         <graphic>
+            <ImageView fitHeight="34.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/icons8-home-48.png" />
+               </image>
+            </ImageView>
+         </graphic>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+   </children>
 </AnchorPane>

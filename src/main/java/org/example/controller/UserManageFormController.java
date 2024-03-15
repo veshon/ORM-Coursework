@@ -42,13 +42,16 @@ public class UserManageFormController {
 
     @FXML
     private TextField txtPassword;
+
     private static Stage stage;
     private static Scene scene;
     private static Parent parent;
+
     @FXML
     void btnClearOnAction(ActionEvent event) {
         clearFields();
     }
+
     UserDAO userDAO = new UserDAOImpl();
 
     @FXML
