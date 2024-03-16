@@ -41,21 +41,18 @@ public class LoginFormController {
         String user = "root";
         String password = "1234";
 
-        String query = "SELECT name, password FROM user WHERE id = ?";
+        String query = "SELECT name, password FROM user WHERE name = ?";
         try {
             Connection connection = DriverManager.getConnection(url, user, password);
             PreparedStatement preparedStatement = connection.prepareStatement(query);
-            preparedStatement.setString(1, "id");
+            preparedStatement.setString(1, name);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
-                String username = resultSet.getString("name");
-                String password1 = resultSet.getString("password");
+                String username = resultSet.getString(1);
+                String password1 = resultSet.getString(2);
 
-                String user_name = txtUsername.getText();
-                String password_1 = txtPassword.getText();
-
-                if (username.equals(user_name) && password1.equals(password_1)) {
+                if (username.equals(name) && password1.equals(pass)) {
                     System.out.println("Successful !!");
                     parent = FXMLLoader.load(getClass().getResource("/view/MainForm.fxml"));
                     stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
@@ -64,7 +61,7 @@ public class LoginFormController {
                     stage.centerOnScreen();
                     stage.show();
                 } else {
-                    System.out.println("Wrong Credentials !!");
+                    new Alert(Alert.AlertType.ERROR, "User not found !!").show();
                 }
             }
 
@@ -85,6 +82,6 @@ public class LoginFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
-    }
+}
 
 }
