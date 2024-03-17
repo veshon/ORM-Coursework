@@ -8,14 +8,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import org.example.db.DbConnection;
 
 import javax.swing.*;
 import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class MainFormController {
     @FXML

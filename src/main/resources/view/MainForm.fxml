@@ -2,7 +2,6 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.Cursor?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,16 +12,12 @@
    <children>
       <AnchorPane prefHeight="650.0" prefWidth="1100.0">
          <children>
-            <ButtonBar layoutX="-1.0" layoutY="-9.0">
-               <buttons>
-                  <ImageView fitHeight="658.0" fitWidth="1103.0">
-                     <image>
-                        <Image url="@../images/LIB9.jpg" />
-                     </image>
-                  </ImageView>
-               </buttons>
-            </ButtonBar>
-            <JFXButton buttonType="RAISED" layoutX="48.0" layoutY="84.0" onAction="#btnUserOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #00C0EF;" text="Registration" textFill="WHITE">
+            <ImageView fitHeight="658.0" fitWidth="1103.0" layoutX="9.0" layoutY="-9.0">
+               <image>
+                  <Image url="@../images/LIB9.jpg" />
+               </image>
+            </ImageView>
+            <JFXButton buttonType="RAISED" layoutX="48.0" layoutY="124.0" onAction="#btnUserOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #00C0EF;" stylesheets="@../css/main.css" text="Registration" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -37,7 +32,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="388.0" layoutY="84.0" onAction="#btnUserManageOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #00a75a;" text="User Manage " textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="388.0" layoutY="124.0" onAction="#btnUserManageOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #00a75a;" stylesheets="@../css/main.css" text="User Manage " textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -52,7 +47,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="728.0" layoutY="84.0" onAction="#btnBooksOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #F39C11;" text="Books Manage" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="728.0" layoutY="124.0" onAction="#btnBooksOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #F39C11;" stylesheets="@../css/main.css" text="Books Manage" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -67,17 +62,17 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <Label fx:id="lblUseCount" layoutX="219.0" layoutY="87.0" prefHeight="59.0" prefWidth="21.0" text="3" textFill="WHITE">
+            <Label fx:id="lblUseCount" layoutX="219.0" layoutY="126.0" prefHeight="59.0" prefWidth="21.0" text="3" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Label>
-            <Label fx:id="lblBookCount" layoutX="870.0" layoutY="88.0" text="10" textFill="WHITE">
+            <Label fx:id="lblBookCount" layoutX="870.0" layoutY="127.0" text="10" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="35.0" />
                </font>
             </Label>
-            <JFXButton layoutX="47.0" layoutY="384.0" onAction="#btnPlaceOrderOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #DC4B38;" text="Place Your Order" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="47.0" layoutY="384.0" onAction="#btnPlaceOrderOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #DC4B38;" stylesheets="@../css/main.css" text="Place Your Order" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -92,7 +87,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="733.0" layoutY="385.0" onAction="#btnLogOutOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #DC4B38;" text="Log Out" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="733.0" layoutY="385.0" onAction="#btnLogOutOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #AC3939;" stylesheets="@../css/main.css" text="Log Out" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -107,7 +102,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
-            <JFXButton layoutX="385.0" layoutY="382.0" onAction="#btnReportOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #DC4B38;" text="Reports" textFill="WHITE">
+            <JFXButton buttonType="RAISED" layoutX="385.0" layoutY="382.0" onAction="#btnReportOnAction" prefHeight="140.0" prefWidth="290.0" style="-fx-background-color: #529494;" stylesheets="@../css/main.css" text="Reports" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -122,6 +117,16 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </JFXButton>
+            <ImageView fitHeight="105.0" fitWidth="103.0" layoutX="16.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/Bookbar.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="286.0" layoutY="3.0" prefHeight="63.0" prefWidth="607.0" text="WELCOME TO BOOKBAR" textFill="#02565c">
+               <font>
+                  <Font name="Copperplate Gothic Bold" size="44.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

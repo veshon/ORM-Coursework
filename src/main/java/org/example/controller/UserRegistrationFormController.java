@@ -142,4 +142,15 @@ public class UserRegistrationFormController {
         stage.centerOnScreen();
         stage.show();
     }
+
+    @FXML
+    void btnLoginOnAction(ActionEvent actionEvent) throws IOException {
+        parent = FXMLLoader.load(getClass().getResource("/view/loginForm.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        scene = new Scene(parent);
+        stage.setScene(scene);
+        stage.centerOnScreen();
+        stage.show();
+    }
+
 }

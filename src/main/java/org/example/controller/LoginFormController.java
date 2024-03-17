@@ -63,6 +63,7 @@ public class LoginFormController {
                 } else {
                     new Alert(Alert.AlertType.ERROR, "User not found !!").show();
                 }
+
             }
 
             resultSet.close();
@@ -82,6 +83,6 @@ public class LoginFormController {
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.show();
-}
+    }
 
 }
